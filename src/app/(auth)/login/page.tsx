@@ -30,7 +30,7 @@ const LoginPage = () => {
   // Auto-redirect if already logged in
   useEffect(() => {
     if (status === "authenticated") {
-      router.push("/");
+      router.push("/dashboard");
     }
   }, [status, router]);
 

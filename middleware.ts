@@ -7,41 +7,34 @@ export default withAuth(
   },
   {
     callbacks: {
-        
-      //use for authenticated user
-
       authorized({ req, token }) {
         const { pathname } = req.nextUrl;
 
+        // Public routes
+        const publicPaths = [
+          "/",               // Landing page
+          "/login",          // Login page
+          "/register",       // Signup/Register page
+        ];
+
+        // Allow NextAuth API routes & public pages
         if (
           pathname.startsWith("/api/auth") ||
-          pathname.startsWith("/login") ||
-          pathname.startsWith("/register")
-        )
-          return true;
-
-        if (pathname == "/" || pathname.startsWith("/api/video")) {
+          publicPaths.includes(pathname)
+        ) {
           return true;
         }
 
+        // Everything else requires authentication
         return !!token;
       },
     },
   }
 );
 
-//Snippit from hitesh
-// middleware will run in order of matching pages
-
+// Middleware will run for all routes except static/image/favicon
 export const config = {
   matcher: [
-    /*
-     * Match all request paths except:
-     * -next/static (static files)
-     * -_next/image (image optimization files)
-     * - favicon.ico (favicon file)
-     * - public folder */
-
     "/((?!_next/static|_next/image|favicon.ico|public/).*)",
   ],
 };

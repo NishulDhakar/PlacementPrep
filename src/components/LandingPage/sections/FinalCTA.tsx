@@ -1,6 +1,6 @@
 import React from 'react'
-import { Reveal } from '../reveal'
-import { Button } from '../ui/button'
+import { Reveal } from '../../Common/reveal'
+import { Button } from '../../ui/button'
 import Link from 'next/link'
 
 

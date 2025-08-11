@@ -1,10 +1,8 @@
 "use client";
 
-import type { Metadata } from "next";
-// @ts-expect-error
 import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
-import "./globals.css";
+import "../styles/globals.css"
 import { SessionProvider } from "next-auth/react";
 
 
@@ -30,7 +28,7 @@ html {
         `}</style>
       </head>
       <body>
-              <SessionProvider>        {children}</SessionProvider>
+              <SessionProvider>{children}</SessionProvider>
         
       </body>
     </html>

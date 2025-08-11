@@ -1,12 +1,12 @@
 import React from "react";
-import { Reveal } from "../reveal";
+import { Reveal } from "../../Common/reveal";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "../ui/card";
+} from "../../ui/card";
 import { CheckCircle2 } from "lucide-react";
 import { FEATURES } from "@/data/Feature";
 

@@ -1,9 +1,9 @@
 import React from 'react'
 import Image from "next/image"
 import Link from "next/link"
-import { Reveal } from '../reveal'
+import { Reveal } from '../../Common/reveal'
 import { ArrowRight, Sparkles } from 'lucide-react'
-import { Button } from '../ui/button'
+import { Button } from '../../ui/button'
 
 
 export default function Hero() {
