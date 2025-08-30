@@ -49,7 +49,7 @@ const RegisterPage = () => {
         throw new Error(data.error || "Registration failed");
       }
 
-      router.push("/");
+      router.push("/dashboard");
   } catch (error) {
   if (error instanceof Error) {
     alert(error.message || "Something went wrong");

@@ -12,13 +12,7 @@ import {
 
 export const FEATURES = [
   {
-    title: "Essay Practice",
-    description: "Pick topics, write under time, and get instant AI-powered feedback.",
-    icon: Layers,
-    points: ["Timed writing", "Topic bank", "Coaching tips", "Auto saved drafts"],
-  },
-  {
-    title: "Pseudocode Challenges",
+    title: "Pseudocode MCQ",
     description: "Build logic with language-agnostic problems.",
     icon: MonitorSmartphone,
     points: ["Daily sets", "Progressive difficulty", "Hints & solutions"],

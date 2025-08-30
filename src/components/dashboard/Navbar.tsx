@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-
+import { signOut } from "next-auth/react"
 import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
@@ -13,7 +13,6 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { User, Settings, LogOut, Trophy } from "lucide-react"
 import { MobileSidebar } from "./sidebar"
-// import { ThemeToggle } from "./theme-toggle"
 
 export function Header() {
   return (
@@ -23,18 +22,16 @@ export function Header() {
           <MobileSidebar />
 
           <Link href="/" className="flex items-center space-x-2">
-            <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center">
+            <div className="h-8 w-8 rounded-lg bg-gray-300 flex items-center justify-center">
               <Trophy className="h-5 w-5 text-primary-foreground" />
             </div>
-            <h1 className="text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            <h1 className="text-xl font-bold text-gray-300 bg-clip-text">
               PlacementReady
             </h1>
           </Link>
         </div>
 
         <div className="flex justify-end space-x-4">
-          {/* <ThemeToggle /> */}
-
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" className="relative h-8 w-8 rounded-full">
@@ -58,7 +55,9 @@ export function Header() {
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>
+              <DropdownMenuItem
+                onClick={() => signOut({ callbackUrl: "/" })} 
+              >
                 <LogOut className="mr-2 h-4 w-4" />
                 <span>Log out</span>
               </DropdownMenuItem>
