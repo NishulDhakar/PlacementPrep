@@ -5,13 +5,12 @@ import { GeistMono } from 'geist/font/mono'
 import "../styles/globals.css"
 import { SessionProvider } from "next-auth/react";
 import { Analytics } from "@vercel/analytics/next";
-import { Metadata } from 'next';
 
 
-export const metadata: Metadata = {
-  title: "PlacementReady",
-  description: "web for placement preparation and practice",
-};
+// export const metadata: Metadata = {
+//   title: "PlacementReady",
+//   description: "web for placement preparation and practice",
+// };
 
 export default function RootLayout({
   children,
