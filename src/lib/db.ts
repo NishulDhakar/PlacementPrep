@@ -12,15 +12,17 @@ interface MongooseCache {
 }
 
 declare global {
-
+  // eslint-disable-next-line no-var
   var mongoose: MongooseCache | undefined;
 }
 
-let cached = global.mongoose;
+// Always initialize `cached` so it's never undefined
+const cached: MongooseCache = global.mongoose ?? {
+  conn: null,
+  promise: null,
+};
 
-if (!cached) {
-  cached = global.mongoose = { conn: null, promise: null };
-}
+global.mongoose = cached;
 
 export async function connectToDb() {
   if (cached.conn) {
