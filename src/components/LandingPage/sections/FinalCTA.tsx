@@ -14,11 +14,11 @@ export default function FinalCTA() {
                   {"Your placement journey starts today."}
                 </h2>
                 <p className="mx-auto mt-2 max-w-2xl text-white/80">
-                  {"Join thousands of students preparing smarter with PlacementReady—free to start, upgrade anytime."}
+                  {"Join thousands of students preparing smarter with PlacementReady free to start, upgrade anytime."}
                 </p>
                 <div className="mt-6 flex flex-wrap justify-center gap-3">
                   <Button asChild size="lg" className="bg-emerald-500 text-emerald-950 hover:bg-emerald-400">
-                    <Link href="/signup">{"Create Free Account"}</Link>
+                    <Link href="/">{"  Join Waitlist"}</Link>
                   </Button>
                   <Button
                     asChild

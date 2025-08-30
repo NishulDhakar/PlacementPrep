@@ -52,5 +52,15 @@ export const FEATURES = [
     description: "Read and share interview experiences and strategies.",
     icon: Sparkles,
     points: ["Real experiences", "Company tags", "Peer feedback"],
-  },
+  }, 
+  {
+  title: "More",
+  description: "Extra features to make your prep smoother and engaging.",
+  icon: Star,
+  points: [
+    "Daily challenges & reminders",
+    "Personalized prep roadmap",
+    "Resource library & cheat sheets",
+  ],
+},
 ] as const
