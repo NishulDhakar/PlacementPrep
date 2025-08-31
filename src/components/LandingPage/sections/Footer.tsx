@@ -82,7 +82,7 @@ export default function Footer() {
             <nav aria-label="Social links" className="flex items-center gap-4">
               <Link
                 aria-label="Twitter"
-                href="https://twitter.com"
+                href="https://x.com/intent/follow?screen_name=NishulDhakar"
                 target="_blank"
                 className="rounded-md p-2 text-white/70 transition hover:bg-white/5 hover:text-white"
               >
@@ -92,7 +92,7 @@ export default function Footer() {
               </Link>
               <Link
                 aria-label="LinkedIn"
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/nishuldhakar/"
                 target="_blank"
                 className="rounded-md p-2 text-white/70 transition hover:bg-white/5 hover:text-white"
               >
