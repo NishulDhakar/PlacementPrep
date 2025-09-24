@@ -18,16 +18,16 @@ export default function FinalCTA() {
                 </p>
                 <div className="mt-6 flex flex-wrap justify-center gap-3">
                   <Button asChild size="lg" className="bg-emerald-500 text-emerald-950 hover:bg-emerald-400">
-                    <Link href="/">{"  Join Waitlist"}</Link>
+                    <Link href="/signup">{"  Sign Up   "}</Link>
                   </Button>
-                  <Button
+                  {/* <Button
                     asChild
                     size="lg"
                     variant="outline"
                     className="border-white/15 hover:text-white bg-white/5 text-white hover:bg-white/10"
                   >
                     <Link href="#features">{"Explore Features"}</Link>
-                  </Button>
+                  </Button> */}
                 </div>
               </div>
             </Reveal>

@@ -11,6 +11,12 @@ import {
 } from "lucide-react"
 
 export const FEATURES = [
+    {
+    title: "English Test",
+    description: "Master verbal skills with daily quizzes and detailed solutions.",
+    icon: MonitorSmartphone,
+    points: ["Versant practice", "Daily quizzes", "Detailed solutions", "Progress tracking"],
+  },
   {
     title: "Pseudocode MCQ",
     description: "Build logic with language-agnostic problems.",

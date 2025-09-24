@@ -53,7 +53,7 @@ export default function Hero() {
 
             <div className="mt-8 w-full max-w-md">
               {/* FIX: added onSubmit + value + onChange */}
-              <form
+              {/* <form
                 onSubmit={handleSubmit}
                 className="flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 p-2 backdrop-blur-sm shadow-lg"
               >
@@ -73,7 +73,7 @@ export default function Hero() {
                   Join Waitlist
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
-              </form>
+              </form> */}
 
               {/* Show status message */}
               {status && (
@@ -83,7 +83,7 @@ export default function Hero() {
               {/* Social Proof */}
               <div className="mt-4 flex items-center justify-center gap-2 text-xs text-white/60">
                 <Users className="h-4 w-4 text-emerald-400" />
-                <span>Already 200+ students joined this week 🚀</span>
+                <span>Already 200+ students joined this week </span>
               </div>
             </div>
 
@@ -110,8 +110,8 @@ export default function Hero() {
                 width={1600}
                 height={900}
                 alt="PlacementReady dashboard preview"
-                className="h-auto w-full blur-md"
-                src={"/landingpage.png"}
+                className="h-auto w-full"
+                src={"/landing3.jpg"}
               />
             </div>
           </div>
