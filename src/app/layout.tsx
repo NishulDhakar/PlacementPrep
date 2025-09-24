@@ -1,11 +1,10 @@
 "use client";
 
-import { GeistSans } from 'geist/font/sans'
-import { GeistMono } from 'geist/font/mono'
-import "../styles/globals.css"
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
+import "../styles/globals.css";
 import { SessionProvider } from "next-auth/react";
 import { Analytics } from "@vercel/analytics/next";
-
 
 // export const metadata: Metadata = {
 //   title: "PlacementReady",
@@ -19,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-            <head>
+      <head>
         <style>{`
 html {
   font-family: ${GeistSans.style.fontFamily};
@@ -29,9 +28,11 @@ html {
         `}</style>
       </head>
       <body>
-              <SessionProvider>{children}</SessionProvider>
-                           <Analytics />
-        
+        <SessionProvider>
+          
+          {children}
+          </SessionProvider>
+        <Analytics />
       </body>
     </html>
   );

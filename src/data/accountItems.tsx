@@ -1,9 +1,5 @@
-
-
-import {
-  User,
-  Settings,
-} from "lucide-react"
+import { User, Settings, LogOut } from "lucide-react";
+import { signOut } from "next-auth/react";
 
 export const accountItems = [
   {
@@ -16,4 +12,10 @@ export const accountItems = [
     href: "/settings",
     icon: Settings,
   },
-]
+  {
+    title: "Log out",
+    href: null,
+    icon: LogOut,
+    action: () => signOut({ callbackUrl: "/" }),
+  },
+];

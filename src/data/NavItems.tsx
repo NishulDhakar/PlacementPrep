@@ -17,11 +17,11 @@ export const navigationItems = [
     href: "/dashboard",
     icon: Home,
   },
-//   {
-//     title: "Essay Practice",
-//     href: "/essay-practice",
-//     icon: FileText,
-//   },
+  {
+    title: "English Tests",
+    href: "/english-tests",
+    icon: FileText,
+  },
 //   {
 //     title: "Pseudocode Challenges",
 //     href: "/pseudocode",

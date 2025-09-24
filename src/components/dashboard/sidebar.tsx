@@ -46,7 +46,7 @@ export function Sidebar({ className }: SidebarProps) {
           >
             <ChevronLeft
               className={cn(
-                "h-6 w-6 transition-transform border border-primary rounded-full",
+                "hidden md:block h-6 w-6 transition-transform border border-primary rounded-full",
                 collapsed && "rotate-180"
               )}
             />
@@ -74,27 +74,49 @@ export function Sidebar({ className }: SidebarProps) {
             </Link>
           ))}
         </div>
+<div className="px-3 py-2">
+  {!collapsed && (
+    <h3 className="text-sm font-medium text-muted-foreground mb-2">
+      Account
+    </h3>
+  )}
+  <div className="space-y-1">
+    {accountItems.map((item) =>
+      item.action ? (
+        <Button
+          key={item.title}
+          variant={pathname === item.href ? "secondary" : "ghost"}
+          onClick={item.action}
+          className={cn(
+            "w-full justify-start",
+            pathname === item.href &&
+              "bg-primary/10 text-primary hover:bg-primary/20",
+            collapsed && "px-2"
+          )}
+        >
+          <item.icon className={cn("h-4 w-4", !collapsed && "mr-2")} />
+          {!collapsed && item.title}
+        </Button>
+      ) : (
+        <Link key={item.href} href={item.href}>
+          <Button
+            variant={pathname === item.href ? "secondary" : "ghost"}
+            className={cn(
+              "w-full justify-start",
+              pathname === item.href &&
+                "bg-primary/10 text-primary hover:bg-primary/20",
+              collapsed && "px-2"
+            )}
+          >
+            <item.icon className={cn("h-4 w-4", !collapsed && "mr-2")} />
+            {!collapsed && item.title}
+          </Button>
+        </Link>
+      )
+    )}
+  </div>
+</div>
 
-               <div className="px-3 py-2">
-          {!collapsed && <h3 className="text-sm font-medium text-muted-foreground mb-2">Account</h3>}
-          <div className="space-y-1">
-            {accountItems.map((item) => (
-              <Link key={item.href} href={item.href}>
-                <Button
-                  variant={pathname === item.href ? "secondary" : "ghost"}
-                  className={cn(
-                    "w-full justify-start",
-                    pathname === item.href && "bg-primary/10 text-primary hover:bg-primary/20",
-                    collapsed && "px-2",
-                  )}
-                >
-                  <item.icon className={cn("h-4 w-4", !collapsed && "mr-2")} />
-                  {!collapsed && item.title}
-                </Button>
-              </Link>
-            ))}
-          </div>
-        </div>
 
 
       </div>

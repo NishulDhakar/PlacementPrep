@@ -1,38 +1,48 @@
 "use client"
 
 import Link from "next/link"
-import { signOut } from "next-auth/react"
+// import { signOut } from "next-auth/react"
 import { Button } from "@/components/ui/button"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+// import {
+//   DropdownMenu,
+//   DropdownMenuContent,
+//   DropdownMenuItem,
+//   DropdownMenuSeparator,
+//   DropdownMenuTrigger,
+// } from "@/components/ui/dropdown-menu"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { User, Settings, LogOut, Trophy } from "lucide-react"
+// import { User, Settings, LogOut, Trophy } from "lucide-react"
+
 import { MobileSidebar } from "./sidebar"
+import { Trophy } from "lucide-react"
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center justify-between px-4">
+    <header className="sticky top-0 z-50 w-full border-b  bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="container flex h-16 gap-350 items-center px-4">
         <div className="flex items-center space-x-4">
           <MobileSidebar />
 
           <Link href="/" className="flex items-center space-x-2">
-            <div className="h-8 w-8 rounded-lg bg-gray-300 flex items-center justify-center">
+            <div className="h-8 w-8 rounded-lg bg-gray-800 flex items-center justify-center">
               <Trophy className="h-5 w-5 text-primary-foreground" />
             </div>
-            <h1 className="text-xl font-bold text-gray-300 bg-clip-text">
+            <h1 className="text-xl font-bold text-gray-800 bg-clip-text">
               PlacementReady
             </h1>
           </Link>
         </div>
 
-        <div className="flex justify-end space-x-4">
-          <DropdownMenu>
+        <div className="hidden md:flex justify-end space-x-4 ">
+
+          <Button variant="ghost" className="relative h-8 w-8 rounded-full">
+                <Avatar className="h-8 w-8">
+                  <AvatarImage src="/placeholder.svg?height=32&width=32" alt="User" />
+                  <AvatarFallback>ND</AvatarFallback>
+                </Avatar>
+              </Button>
+
+          {/* <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" className="relative h-8 w-8 rounded-full">
                 <Avatar className="h-8 w-8">
@@ -62,7 +72,8 @@ export function Header() {
                 <span>Log out</span>
               </DropdownMenuItem>
             </DropdownMenuContent>
-          </DropdownMenu>
+          </DropdownMenu> */}
+
         </div>
       </div>
     </header>
