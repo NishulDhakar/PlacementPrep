@@ -28,7 +28,7 @@ const LoginPage = () => {
   // Auto-redirect if already logged in
   useEffect(() => {
     if (status === "authenticated") {
-      router.push("/dashboard");
+      router.push("/");
     }
   }, [status, router]);
 
@@ -45,7 +45,7 @@ const LoginPage = () => {
     setLoading(false);
 
     if (result?.ok) {
-        router.push("/dashboard");
+        router.push("/");
     } else {
       console.error("Login error:", result);
       alert("Login failed. Please check your email and password.");
@@ -54,7 +54,7 @@ const LoginPage = () => {
 
   const handleGoogleLogin = async () => {
     try {
-      await signIn("google", { callbackUrl: "/dashboard" });
+      await signIn("google", { callbackUrl: "/" });
     } catch (error) {
       console.error("Google sign-in error:", error);
       alert("Google sign-in failed.");
