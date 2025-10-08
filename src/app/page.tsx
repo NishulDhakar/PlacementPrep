@@ -1,4 +1,4 @@
-import Landingpage from "@/pages/Landingpage";
+import Landingpage from "@/components/LandingPage/Landingpage";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import DashboardPage from "./(dashboard)/page";

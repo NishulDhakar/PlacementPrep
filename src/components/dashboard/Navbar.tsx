@@ -15,6 +15,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 import { MobileSidebar } from "./sidebar"
 import { Trophy } from "lucide-react"
+import { ThemeToggleButton } from "../Theam/ThemeSwitch"
 
 export function Header() {
   return (
@@ -27,20 +28,28 @@ export function Header() {
             <div className="h-8 w-8 rounded-lg bg-gray-800 flex items-center justify-center">
               <Trophy className="h-5 w-5 text-primary-foreground" />
             </div>
-            <h1 className="text-xl font-bold text-gray-800 bg-clip-text">
+            <h1 className="text-xl font-bold text-gray-800 dark:text-gray-200 bg-clip-text">
               PlacementReady
             </h1>
           </Link>
         </div>
 
         <div className="hidden md:flex justify-end space-x-4 ">
-
-          <Button variant="ghost" className="relative h-8 w-8 rounded-full">
+ 
+          {/* <Button variant="ghost" className="relative h-8 w-8 rounded-full">
                 <Avatar className="h-8 w-8">
                   <AvatarImage src="/placeholder.svg?height=32&width=32" alt="User" />
                   <AvatarFallback>ND</AvatarFallback>
                 </Avatar>
-              </Button>
+              </Button> */}
+    
+    <div className="pr-6">
+<ThemeToggleButton variant="circle" start="top-right" blur />
+
+      </div>
+
+
+
 
           {/* <DropdownMenu>
             <DropdownMenuTrigger asChild>

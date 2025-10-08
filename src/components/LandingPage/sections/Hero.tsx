@@ -35,10 +35,10 @@ export default function Hero() {
       <div className="container mx-auto max-w-6xl px-4">
         <Reveal>
           <div className="flex flex-col items-center text-center">
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/80 shadow-sm backdrop-blur">
+            {/* <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/80 shadow-sm backdrop-blur">
               <Sparkles className="h-3.5 w-3.5 text-emerald-400" />
               Free-first, high-quality campus placement prep
-            </span>
+            </span> */}
 
             <h1
               id="hero-heading"

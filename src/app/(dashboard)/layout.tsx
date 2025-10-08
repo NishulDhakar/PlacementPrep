@@ -5,8 +5,8 @@ import { getServerSession } from "next-auth"
 import { authOptions } from "@/lib/auth"  
 import "../../styles/globals.css"
 import { Header } from "@/components/dashboard/Navbar"
-import { ThemeProvider } from "@/components/dashboard/theme-provider"
 import { Sidebar } from "@/components/dashboard/sidebar"
+import { ThemeProvider } from "next-themes"
 
 export default async function RootLayout({
   children,
@@ -22,13 +22,13 @@ export default async function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head />
-      <body>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          enableSystem={false}
-          disableTransitionOnChange={false}
-        >
+      <body suppressHydrationWarning className="font-hanken-grotesk flex min-h-screen flex-col bg-neutral-100 antialiased dark:bg-black">
+      <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
           <div className="min-h-screen bg-background">
             <Header />
             <div className="flex">
