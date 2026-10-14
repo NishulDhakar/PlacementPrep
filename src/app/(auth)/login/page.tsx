@@ -45,7 +45,7 @@ const LoginPage = () => {
     setLoading(false);
 
     if (result?.ok) {
-        router.push("/");
+        router.push("/onboarding");
     } else {
       console.error("Login error:", result);
       alert("Login failed. Please check your email and password.");

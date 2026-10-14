@@ -1,10 +1,6 @@
 import mongoose, { Mongoose } from "mongoose";
 
-const MONGODB_URI = process.env.MONGODB_URI!;
-
-if (!MONGODB_URI) {
-  throw new Error("MONGODB_URI is not defined");
-}
+const MONGODB_URI = process.env.MONGODB_URI;
 
 interface MongooseCache {
   conn: Mongoose | null;
@@ -12,10 +8,8 @@ interface MongooseCache {
 }
 
 declare global {
-
   var mongoose: MongooseCache | undefined;
 }
-
 
 const cached: MongooseCache = global.mongoose ?? {
   conn: null,
@@ -25,6 +19,10 @@ const cached: MongooseCache = global.mongoose ?? {
 global.mongoose = cached;
 
 export async function connectToDb() {
+  if (!MONGODB_URI) {
+    throw new Error("MONGODB_URI is not defined");
+  }
+
   if (cached.conn) {
     return cached.conn;
   }

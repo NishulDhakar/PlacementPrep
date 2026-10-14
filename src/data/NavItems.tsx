@@ -1,15 +1,13 @@
 import {
-  FileText,
-  Code,
   BookOpen,
   Brain,
-  Users,
-  Target,
-  MessageSquare,
-  FileCheck,
-  Mail,
+  Building2,
+  Code2,
+  FileText,
   Home,
-} from "lucide-react"
+  MessageSquareText,
+  Target,
+} from "lucide-react";
 
 export const navigationItems = [
   {
@@ -18,48 +16,43 @@ export const navigationItems = [
     icon: Home,
   },
   {
+    title: "Roadmap",
+    href: "/roadmap",
+    icon: Target,
+  },
+  {
+    title: "CS MCQ",
+    href: "/cs-mcq",
+    icon: Brain,
+  },
+  {
+    title: "DSA Journal",
+    href: "/dsa-journal",
+    icon: Code2,
+  },
+  {
+    title: "Company Prep",
+    href: "/company/tcs",
+    icon: Building2,
+  },
+  {
+    title: "Mock Tests",
+    href: "/mock-test",
+    icon: BookOpen,
+  },
+  {
+    title: "AI Mentor",
+    href: "/mentor",
+    icon: MessageSquareText,
+  },
+  {
+    title: "Admin",
+    href: "/admin",
+    icon: Target,
+  },
+  {
     title: "English Tests",
     href: "/english-test",
     icon: FileText,
   },
-//   {
-//     title: "Pseudocode Challenges",
-//     href: "/pseudocode",
-//     icon: Target,
-//   },
-//   {
-//     title: "CS Core Subjects",
-//     href: "/cs-core",
-//     icon: BookOpen,
-//   },
-//   {
-//     title: "DSA Tracker",
-//     href: "/dsa-tracker",
-//     icon: Code,
-//   },
-//   {
-//     title: "Aptitude & Logic",
-//     href: "/aptitude",
-//     icon: Brain,
-//   },
-//   {
-//     title: "Interview Prep",
-//     href: "/interview-prep",
-//     icon: Users,
-//   },
-//   {
-//     title: "Community",
-//     href: "/community",
-//     icon: MessageSquare,
-//   },
-//   {
-//     title: "Resume Review",
-//     href: "/resume-review",
-//     icon: FileCheck,
-//   },
-//   {
-//     title: "Contact Us",
-//     href: "/contact",
-//     icon: Mail,
-//   },
-]
+];

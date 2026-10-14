@@ -1,15 +1,14 @@
-"use client";
-
+import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import "../styles/globals.css";
-import { SessionProvider } from "next-auth/react";
 import { Analytics } from "@vercel/analytics/next";
+import { SessionProviderWrapper } from "@/components/providers/session-provider";
 
-// export const metadata: Metadata = {
-//   title: "PlacementReady",
-//   description: "web for placement preparation and practice",
-// };
+export const metadata: Metadata = {
+  title: "PlacementReady",
+  description: "Placement preparation and practice platform",
+};
 
 export default function RootLayout({
   children,
@@ -17,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning >
+    <html lang="en" suppressHydrationWarning>
       <head>
         <style>{`
 html {
@@ -28,10 +27,7 @@ html {
         `}</style>
       </head>
       <body>
-        <SessionProvider>
-          
-          {children}
-          </SessionProvider>
+        <SessionProviderWrapper>{children}</SessionProviderWrapper>
         <Analytics />
       </body>
     </html>

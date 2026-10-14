@@ -1,29 +1,37 @@
 "use client"
 
-import { useState } from "react"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { Button } from "@/components/ui/button"
-import { ScrollArea } from "@/components/ui/scroll-area"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import {
-
-  Menu,
-  ChevronLeft,
-
-} from "lucide-react"
-import { cn } from "@/lib/utils"
-import { navigationItems } from "@/data/NavItems"
-import { accountItems } from "@/data/accountItems"
-
+import { useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Button } from "@/components/ui/button";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Menu, ChevronLeft } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { navigationItems } from "@/data/NavItems";
+import { accountItems } from "@/data/accountItems";
 
 interface SidebarProps {
-  className?: string
+  className?: string;
 }
 
+type AccountItem = {
+  title: string;
+  href?: string | null;
+  icon: React.ComponentType<{ className?: string }>;
+  action?: () => void;
+};
+
 export function Sidebar({ className }: SidebarProps) {
-  const pathname = usePathname()
-  const [collapsed, setCollapsed] = useState(false)
+  const pathname = usePathname();
+  const [collapsed, setCollapsed] = useState(false);
+
+  const isActiveRoute = (href?: string | null) => {
+    if (!href || href === "/") return pathname === "/";
+    return pathname === href || pathname.startsWith(`${href}/`);
+  };
+
+  const accountList = accountItems as AccountItem[];
 
   return (
   <div
@@ -58,10 +66,10 @@ export function Sidebar({ className }: SidebarProps) {
           {navigationItems.map((item) => (
             <Link key={item.href} href={item.href}>
               <Button
-                variant={pathname === item.href ? "secondary" : "ghost"}
+                variant={isActiveRoute(item.href) ? "secondary" : "ghost"}
                 className={cn(
                   "w-full justify-start",
-                  pathname === item.href &&
+                  isActiveRoute(item.href) &&
                     "bg-primary/10 text-primary hover:bg-primary/20",
                   collapsed && "px-2"
                 )}
@@ -81,15 +89,15 @@ export function Sidebar({ className }: SidebarProps) {
     </h3>
   )}
   <div className="space-y-1">
-    {accountItems.map((item) =>
+    {accountList.map((item) =>
       item.action ? (
         <Button
           key={item.title}
-          variant={pathname === item.href ? "secondary" : "ghost"}
+          variant={item.href ? (isActiveRoute(item.href) ? "secondary" : "ghost") : "ghost"}
           onClick={item.action}
           className={cn(
             "w-full justify-start",
-            pathname === item.href &&
+            item.href && isActiveRoute(item.href) &&
               "bg-primary/10 text-primary hover:bg-primary/20",
             collapsed && "px-2"
           )}
@@ -98,12 +106,12 @@ export function Sidebar({ className }: SidebarProps) {
           {!collapsed && item.title}
         </Button>
       ) : (
-        <Link key={item.href} href={item.href}>
+        <Link key={item.title} href={item.href || "/"}>
           <Button
-            variant={pathname === item.href ? "secondary" : "ghost"}
+            variant={isActiveRoute(item.href) ? "secondary" : "ghost"}
             className={cn(
               "w-full justify-start",
-              pathname === item.href &&
+              isActiveRoute(item.href) &&
                 "bg-primary/10 text-primary hover:bg-primary/20",
               collapsed && "px-2"
             )}
